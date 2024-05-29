@@ -11,6 +11,8 @@ COPY . .
 ENV APP_MODE=dev
 ENV APP_ADMIN_USERNAME=admin
 ENV APP_ADMIN_PASSWORD=admin
+ENV APP_TG_CHAT_ID=some_tg_id
+ENV APP_TG_BOT_TOKEN=some_token
 
 RUN ["mkdir", "data"]
 RUN ["chmod", "+x", "startup.sh"]

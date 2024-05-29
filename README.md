@@ -19,9 +19,11 @@ docker run -d -p 8080:8000 \
   -e APP_MODE=dev \
   -e APP_ADMIN_USERNAME=admin \
   -e APP_ADMIN_PASSWORD=admin \
+  -e APP_TG_CHAT_ID=some_tg_id \
+  -e APP_TG_BOT_TOKEN=some_token \
   -v $(pwd)/data:/app/data \
-  --name backend_api \
-  backend_api
+  --name aapopkov_backend_api \
+  aapopkov_backend_api
 ```
 
 >

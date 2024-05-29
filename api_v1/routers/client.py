@@ -10,7 +10,7 @@ from utils.config import config
 router = APIRouter(prefix="/client", tags=["client"])
 
 
-@router.post("/send_message", response_model=MessageSchema)
+@router.post("/send_message")
 async def send_message(
     request: Request, message: MessageSchema = Depends(get_message_content)
 ):
