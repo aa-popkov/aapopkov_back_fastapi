@@ -25,6 +25,9 @@ class Config(BaseSettings):
     APP_ADMIN_USERNAME: str
     APP_ADMIN_PASSWORD: str
 
+    APP_TG_CHAT_ID: str
+    APP_TG_BOT_TOKEN: str
+
     JWT: JwtSettings = JwtSettings()
 
     @property

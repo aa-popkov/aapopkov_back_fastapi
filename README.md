@@ -5,7 +5,7 @@
 Pull this repo:
 
 ```shell
-git pull *this_repo*
+git pull https://github.com/aa-popkov/aapopkov_back_fastapi.git
 ```
 
 ### Docker
@@ -13,7 +13,7 @@ git pull *this_repo*
 Go into repo folder
 
 ```shell
-cd 
+cd ./aapopkov_back_fastapi
 docker build -t backend_api .
 docker run -d -p 8080:8000 \
   -e APP_MODE=dev \

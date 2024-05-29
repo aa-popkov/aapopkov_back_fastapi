@@ -2,6 +2,7 @@ import asyncio
 
 import uvicorn
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
 from api_v1 import api_v1_router
 from utils.config import config, ModeType
@@ -24,6 +25,20 @@ app = FastAPI(
 
 app.include_router(router=api_v1_router)
 
+origins = [
+    "http://localhost",
+    "https://localhost",
+    "http://localhost:5173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 if __name__ == "__main__":
     asyncio.run(on_startup())
-    uvicorn.run(app=app, host="0.0.0.0", port=8000)
+    uvicorn.run(app=app, host="0.0.0.0", port=8000, proxy_headers=True)

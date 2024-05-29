@@ -8,7 +8,6 @@ from utils import auth
 router = APIRouter(prefix="/auth", tags=["auth"])
 
 
-
 @router.post("/login", response_model=Token)
 async def login(user: UserSchema = Depends(validate_user)):
     jwt_payload = {
