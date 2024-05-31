@@ -25,11 +25,9 @@ app = FastAPI(
 
 app.include_router(router=api_v1_router)
 
-origins = [
-    "http://localhost",
-    "https://localhost",
-    "http://localhost:5173",
-]
+origins = ["https://aa-popkov.github.io/"]
+if config.APP_MODE == ModeType.dev:
+    origins.append("*")
 
 app.add_middleware(
     CORSMiddleware,
