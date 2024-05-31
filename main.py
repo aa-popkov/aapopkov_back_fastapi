@@ -25,7 +25,7 @@ app = FastAPI(
 
 app.include_router(router=api_v1_router)
 
-origins = ["https://aa-popkov.github.io"]
+origins = ["https://aa-popkov.github.io", "95.139.197.164"]
 if config.APP_MODE == ModeType.dev:
     origins.append("*")
 
